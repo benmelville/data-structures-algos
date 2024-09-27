@@ -7,22 +7,29 @@
 
 #include <string>
 
-//template<typename T>
+template<typename T>
 class Node
 {
 public:
-    int data;
+    T data;
     Node* next;
 
-    Node() : data(0), next(nullptr) {}
+    explicit Node(T data) : data(data), next(nullptr) {}
 
-    Node(int data) : data(data), next(nullptr) {}
-
-    std::string toString()
-    {
-        return std::to_string(data);
-    }
+    std::string toString();
 };
+
+template<typename T>
+std::string Node<T>::toString()
+{
+    return std::to_string(data);
+}
+
+template<>
+std::string Node<char>::toString()
+{
+    return {data};
+}
 
 
 #endif //DATA_STRUCTURES_ALGOS_NODE_H
