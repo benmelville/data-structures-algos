@@ -18,6 +18,13 @@ public:
 
     void addToFront(int data);
 
+    void addToBack(int data);
+
+    void removeFromFront();
+
+    void removeFromBack();
+
+
 };
 
 
