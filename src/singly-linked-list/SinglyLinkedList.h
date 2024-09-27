@@ -14,6 +14,8 @@ class SinglyLinkedList
 public:
     SinglyLinkedList() : head(nullptr) {}
 
+    Node* getHead() const;
+
     std::string toString();
 
     void addToFront(int data);
@@ -23,7 +25,6 @@ public:
     void removeFromFront();
 
     void removeFromBack();
-
 
 };
 

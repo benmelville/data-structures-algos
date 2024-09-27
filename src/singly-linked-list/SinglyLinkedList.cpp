@@ -85,9 +85,11 @@ void SinglyLinkedList::removeFromBack()
         current->next = nullptr;
     }
 
+}
 
-
-
+Node* SinglyLinkedList::getHead() const
+{
+    return head;
 }
 
 
