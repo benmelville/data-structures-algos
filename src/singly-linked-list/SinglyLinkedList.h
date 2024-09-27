@@ -14,6 +14,17 @@ class SinglyLinkedList
 public:
     SinglyLinkedList() : head(nullptr) {}
 
+    ~SinglyLinkedList()
+    {
+        Node<T>* current = head;
+        while (current != nullptr)
+        {
+            Node<T>* nextNode = current->next;
+            delete current;
+            current = nextNode;
+        }
+    }
+
     void addToFront(T data)
     {
         Node<T>* newNode = new Node(data);
