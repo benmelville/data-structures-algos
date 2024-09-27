@@ -110,7 +110,6 @@ std::string toString()
         return head;
     }
 
-
 };
 
 
