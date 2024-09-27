@@ -6,7 +6,21 @@
 #include "Node.h"
 int main()
 {
-    SinglyLinkedList myList;
+    SinglyLinkedList<char> characters;
+    characters.addToBack('a');
+    characters.addToBack('b');
+    characters.addToBack('c');
+    characters.addToBack('d');
+    characters.addToBack('e');
+    characters.addToBack('f');
+    characters.addToBack('g');
+    characters.addToBack('h');
+    characters.addToBack('i');
+    characters.addToBack('j');
+    characters.addToBack('k');
+    std::cout << "The list: " << characters.toString() << std::endl;
+
+    SinglyLinkedList<int> myList;
     myList.addToFront(6);
     myList.addToFront(68);
     myList.addToFront(89);
@@ -30,5 +44,4 @@ int main()
     myList.removeFromBack();
     std::cout << "The list: " << myList.toString() << std::endl;
 
-    std::cout << "singly linked list class has entered the chat" << std::endl;
 }
