@@ -4,6 +4,9 @@ project(data-structures-algos)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(test main.cpp)
+enable_testing()
+
+find_package(GTest REQUIRED)
+include(GoogleTest)
 
 add_subdirectory(singly-linked-list)
