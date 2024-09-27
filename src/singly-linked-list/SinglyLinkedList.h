@@ -9,10 +9,12 @@
 //template<typename T>
 class SinglyLinkedList
 {
-    Node head;
+    Node* head;
 
 public:
-    SinglyLinkedList(Node head) : head(head) {};
+    SinglyLinkedList() : head(nullptr) {}
+
+    std::string toString();
 
     void addToFront(int data);
 
