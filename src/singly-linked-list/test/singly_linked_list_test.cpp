@@ -31,7 +31,7 @@ TEST(SinglyLinkedListTest, AddToFront)
 
     ASSERT_EQ(myList.getHead()->data, 45);
 
-    Node<int>* current = myList.getHead();
+    SinglyLinkedListNode<int>* current = myList.getHead();
     int current_index = 0;
 
     while(current->next != nullptr)
@@ -64,7 +64,7 @@ TEST(SinglyLinkedListTest, AddToBack)
 
     ASSERT_EQ(myList.getHead()->data, 6);
 
-    Node<int>* current = myList.getHead();
+    SinglyLinkedListNode<int>* current = myList.getHead();
     int current_index = 0;
 
     while(current->next != nullptr)
@@ -98,7 +98,7 @@ TEST(SinglyLinkedListTest, RemoveFromFront)
     myList.removeFromFront();
     myList.removeFromFront();
 
-    Node<int>* current = myList.getHead();
+    SinglyLinkedListNode<int>* current = myList.getHead();
     int current_index = 0;
 
     while(current->next != nullptr)
@@ -130,7 +130,7 @@ TEST(SinglyLinkedListTest, RemoveFromBack)
     myList.removeFromBack();
     myList.removeFromBack();
 
-    Node<int>* current = myList.getHead();
+    SinglyLinkedListNode<int>* current = myList.getHead();
     int current_index = 0;
 
     while(current->next != nullptr)
