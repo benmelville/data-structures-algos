@@ -11,3 +11,4 @@ include(GoogleTest)
 
 add_subdirectory(singly-linked-list)
 add_subdirectory(doubly-linked-list)
+add_subdirectory(stack)
