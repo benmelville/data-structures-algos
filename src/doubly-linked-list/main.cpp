@@ -13,11 +13,16 @@ int main()
 
     myList.addToFront(5);
     myList.addToFront(6);
+    myList.print();
 
     myList.addToBack(9);
     myList.addToBack(12);
     myList.addToBack(45);
+    myList.print();
 
+    myList.removeFromFront();
+    myList.removeFromFront();
+    myList.removeFromFront();
     myList.print();
 
     return 0;

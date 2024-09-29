@@ -19,6 +19,17 @@ public:
 
     DoublyLinkedList() : head(nullptr), tail(nullptr) {}
 
+    ~DoublyLinkedList()
+    {
+        auto* current = head;
+        while (current != nullptr)
+        {
+            auto* nextNode = current->next;
+            delete current;
+            current = nextNode;
+        }
+    }
+
     void addToFront(T data)
     {
         auto* newNode = new DoublyLinkedListNode<T>(data);
@@ -51,7 +62,26 @@ public:
             tail->next = newNode;
             tail = newNode;
         }
+    }
 
+    void removeFromFront()
+    {
+        if (head == nullptr)
+        {
+            return;
+        }
+        else if (head->next == nullptr)
+        {
+            tail = nullptr;
+            delete head;
+        }
+        else
+        {
+            auto* temp = head;
+            head = head->next;
+            head->previous = nullptr;
+            delete temp;
+        }
     }
 
     void print()
@@ -69,6 +99,7 @@ public:
             }
             current = current->next;
         }
+        std::cout << "\n";
     }
 };
 

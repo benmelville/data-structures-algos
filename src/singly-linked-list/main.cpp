@@ -42,6 +42,11 @@ int main()
     myList.removeFromBack();
     myList.removeFromBack();
     myList.removeFromBack();
+    myList.removeFromFront();
+    myList.removeFromFront();
+    myList.removeFromFront();
+    myList.removeFromFront();
+
     std::cout << "The list: " << myList.toString() << std::endl;
 
 }
