@@ -12,10 +12,10 @@ class DoublyLinkedListNode
 {
 public:
     T data;
-    DoublyLinkedListNode* next;
-    DoublyLinkedListNode* previous;
+    DoublyLinkedListNode<T>* next;
+    DoublyLinkedListNode<T>* previous;
 
-    explicit DoublyLinkedListNode(T data) : data(data), next(nullptr), previous(nullptr){}
+    DoublyLinkedListNode(T data) : data(data), next(nullptr), previous(nullptr){}
 
     std::string toString();
 };
