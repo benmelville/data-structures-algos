@@ -25,5 +25,15 @@ int main()
     myList.removeFromFront();
     myList.print();
 
+    myList.addToBack(13);
+    myList.addToBack(23);
+    myList.addToBack(67);
+    myList.print();
+
+    myList.removeFromBack();
+    myList.removeFromBack();
+    myList.removeFromBack();
+    myList.print();
+
     return 0;
 }

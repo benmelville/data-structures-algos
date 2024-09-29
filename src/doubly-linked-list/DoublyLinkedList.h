@@ -84,6 +84,16 @@ public:
         }
     }
 
+    void removeFromBack()
+    {
+        if (head == nullptr) { return; }
+
+        auto* temp = tail;
+        tail = tail->previous;
+        tail->next = nullptr;
+        delete temp;
+    }
+
     void print()
     {
         DoublyLinkedListNode<T>* current = head;
@@ -91,11 +101,11 @@ public:
         {
             if (current->next == nullptr)
             {
-                std::cout << current->data;
+                std::cout << current->toString();
             }
             else
             {
-                std::cout << current->data << " <-> ";
+                std::cout << current->toString() << " <-> ";
             }
             current = current->next;
         }
