@@ -5,21 +5,21 @@
 #ifndef DATA_STRUCTURES_ALGOS_SINGLYLINKEDLIST_H
 #define DATA_STRUCTURES_ALGOS_SINGLYLINKEDLIST_H
 
-#include "Node.h"
+#include "SinglyLinkedListNode.h"
 template<typename T>
 class SinglyLinkedList
 {
-    Node<T>* head;
+    SinglyLinkedListNode<T>* head;
 
 public:
     SinglyLinkedList() : head(nullptr) {}
 
     ~SinglyLinkedList()
     {
-        Node<T>* current = head;
+        SinglyLinkedListNode<T>* current = head;
         while (current != nullptr)
         {
-            Node<T>* nextNode = current->next;
+            SinglyLinkedListNode<T>* nextNode = current->next;
             delete current;
             current = nextNode;
         }
@@ -27,7 +27,7 @@ public:
 
     void addToFront(T data)
     {
-        Node<T>* newNode = new Node(data);
+        SinglyLinkedListNode<T>* newNode = new SinglyLinkedListNode(data);
         newNode->next = head;
         head = newNode;
     }
@@ -35,7 +35,7 @@ public:
 std::string toString()
 {
     std::string answer;
-    Node<T>* current = head;
+    SinglyLinkedListNode<T>* current = head;
     while (current != nullptr)
     {
         if (current->next == nullptr)
@@ -56,16 +56,16 @@ std::string toString()
     {
         if (head == nullptr)
         {
-            head = new Node(data);
+            head = new SinglyLinkedListNode(data);
         }
         else
         {
-            Node<T>* current = head;
+            SinglyLinkedListNode<T>* current = head;
             while(current->next != nullptr)
             {
                 current = current->next;
             }
-            current->next = new Node(data);
+            current->next = new SinglyLinkedListNode(data);
         }
     }
 
@@ -73,7 +73,7 @@ std::string toString()
     {
         if (head == nullptr) { return; }
 
-        Node<T>* temp = head;
+        SinglyLinkedListNode<T>* temp = head;
         head = head->next;
         delete temp;
     }
@@ -92,7 +92,7 @@ std::string toString()
 
         else
         {
-            Node<T>* current = head;
+            SinglyLinkedListNode<T>* current = head;
 
             while(current->next->next != nullptr)
             {
@@ -105,7 +105,7 @@ std::string toString()
 
     }
 
-    Node<T>* getHead() const
+    SinglyLinkedListNode<T>* getHead() const
     {
         return head;
     }

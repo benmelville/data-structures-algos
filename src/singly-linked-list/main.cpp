@@ -3,7 +3,7 @@
 //
 #include <iostream>
 #include "SinglyLinkedList.h"
-#include "Node.h"
+#include "SinglyLinkedListNode.h"
 int main()
 {
     SinglyLinkedList<char> characters;
@@ -42,6 +42,11 @@ int main()
     myList.removeFromBack();
     myList.removeFromBack();
     myList.removeFromBack();
+    myList.removeFromFront();
+    myList.removeFromFront();
+    myList.removeFromFront();
+    myList.removeFromFront();
+
     std::cout << "The list: " << myList.toString() << std::endl;
 
 }

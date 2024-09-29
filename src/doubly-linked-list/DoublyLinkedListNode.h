@@ -8,28 +8,30 @@
 #include <string>
 
 template<typename T>
-class Node
+class DoublyLinkedListNode
 {
 public:
     T data;
-    Node* next;
+    DoublyLinkedListNode<T>* next;
+    DoublyLinkedListNode<T>* previous;
 
-    explicit Node(T data) : data(data), next(nullptr) {}
+    DoublyLinkedListNode(T data) : data(data), next(nullptr), previous(nullptr){}
 
     std::string toString();
 };
 
 template<typename T>
-std::string Node<T>::toString()
+std::string DoublyLinkedListNode<T>::toString()
 {
     return std::to_string(data);
 }
 
 template<>
-std::string Node<char>::toString()
+std::string DoublyLinkedListNode<char>::toString()
 {
     return {data};
 }
+
 
 
 #endif //DATA_STRUCTURES_ALGOS_NODE_H
