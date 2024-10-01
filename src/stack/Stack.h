@@ -14,6 +14,8 @@ class Stack
 
 public:
 
+    ~Stack() = default;
+
     void push(T data)
     {
         stack.addToFront(data);
@@ -26,7 +28,7 @@ public:
 
     T peek()
     {
-        return stack->head->data;
+        return stack.getHead()->data;
     }
 
     bool isEmpty()
@@ -41,7 +43,17 @@ public:
 
     void print()
     {
-        std::cout << stack.toString() << std::endl;
+        std::cout << "----TOP OF STACK----" << std::endl;
+
+        SinglyLinkedListNode<T>* current = stack.getHead();
+
+        while (current != nullptr)
+        {
+            std::cout << current->data << std::endl;
+            current = current->next;
+        }
+
+        std::cout << "----BOTTOM OF STACK----\n" << std::endl;
     }
 
 };

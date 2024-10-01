@@ -16,6 +16,11 @@ public:
 
     ~SinglyLinkedList()
     {
+        clear();
+    }
+
+    void clear()
+    {
         SinglyLinkedListNode<T>* current = head;
         while (current != nullptr)
         {
@@ -23,6 +28,7 @@ public:
             delete current;
             current = nextNode;
         }
+        head = nullptr;
     }
 
     void addToFront(T data)
@@ -30,11 +36,6 @@ public:
         SinglyLinkedListNode<T>* newNode = new SinglyLinkedListNode(data);
         newNode->next = head;
         head = newNode;
-    }
-
-    void clear()
-    {
-        ~SinglyLinkedList();
     }
 
 std::string toString()
