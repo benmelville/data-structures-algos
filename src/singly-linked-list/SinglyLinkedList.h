@@ -32,6 +32,11 @@ public:
         head = newNode;
     }
 
+    void clear()
+    {
+        ~SinglyLinkedList();
+    }
+
 std::string toString()
 {
     std::string answer;
@@ -69,25 +74,30 @@ std::string toString()
         }
     }
 
-    void removeFromFront()
+    T removeFromFront()
     {
-        if (head == nullptr) { return; }
+        if (head == nullptr) { return T(); }
 
         SinglyLinkedListNode<T>* temp = head;
         head = head->next;
+        T data = temp->data;
         delete temp;
+        return data;
     }
 
-    void removeFromBack()
+    T removeFromBack()
     {
+        T data;
         if (head == nullptr)
         {
-            return;
+            return T();
         }
         else if (head->next == nullptr)
         {
+            data = head->data;
             delete head;
             head = nullptr;
+            return data;
         }
 
         else
@@ -98,9 +108,10 @@ std::string toString()
             {
                 current = current->next;
             }
-
+            data = current->next->data;
             delete current->next;
             current->next = nullptr;
+            return data;
         }
 
     }
