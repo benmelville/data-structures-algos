@@ -10,9 +10,10 @@ template<typename T>
 class SinglyLinkedList
 {
     SinglyLinkedListNode<T>* head;
+    SinglyLinkedListNode<T>* tail;
 
 public:
-    SinglyLinkedList() : head(nullptr) {}
+    SinglyLinkedList() : head(nullptr), tail(nullptr) {}
 
     ~SinglyLinkedList()
     {
