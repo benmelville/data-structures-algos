@@ -12,34 +12,42 @@ template<typename T>
 class Stack
 {
     SinglyLinkedList<T> stack;
+    u_int64_t size;
 
 public:
+
+    Stack() : size(0) {}
 
     ~Stack() = default;
 
     void push(T data)
     {
         stack.addToFront(data);
+        size++;
     }
 
     T pop()
     {
+        size < 1 ? size = 0 : size--;
         return stack.removeFromFront();
     }
 
     T peek()
     {
-        return stack.getHead()->data;
+        return stack.getHead() == nullptr ? T() : stack.getHead()->data;
     }
 
     bool isEmpty()
     {
-        return stack.getHead();
+        return size < 1;
     }
+
+    uint64_t getSize() { return size; }
 
     void clear()
     {
         stack.clear();
+        size = 0;
     }
 
     void print()
