@@ -6,6 +6,7 @@
 #define DATA_STRUCTURES_ALGOS_STACK_H
 
 #include "SinglyLinkedList.h"
+#include <iostream>
 
 template<typename T>
 class Stack
