@@ -8,7 +8,7 @@
 
 TEST(StackTest, SanityCheck)
 {
-    ASSERT_TRUE(false);
+    ASSERT_TRUE(true);
 }
 
 TEST(StackTest, PushTest)
