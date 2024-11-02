@@ -1,7 +1,5 @@
 # Data Structures and Algorithms
 
-
-
 ### About
 This is a repo with the basic data structures and algorithms. We will start from singly linked lists and make our 
 ways to solving real world problems with algorithms and runtime analysis. 
