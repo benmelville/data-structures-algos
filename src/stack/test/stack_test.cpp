@@ -6,10 +6,9 @@
 #include <vector>
 #include <iostream>
 
-
 TEST(StackTest, SanityCheck)
 {
-    ASSERT_TRUE(true);
+    ASSERT_TRUE(false);
 }
 
 TEST(StackTest, PushTest)
@@ -39,7 +38,6 @@ TEST(StackTest, PushTest)
     {
         ASSERT_EQ(testVec[i], testStack.pop());
     }
-
 }
 
 TEST(StackTest, PopTest)
@@ -97,7 +95,6 @@ TEST(StackTest, PeekTest)
 
     testStack.clear();
     ASSERT_EQ(testStack.peek(), 0);
-
 }
 
 TEST(StackTest, IsEmptyTest)

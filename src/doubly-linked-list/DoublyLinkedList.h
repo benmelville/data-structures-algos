@@ -111,6 +111,16 @@ public:
         }
         std::cout << "\n";
     }
+
+    DoublyLinkedListNode<T>* getHead() const
+    {
+        return head;
+    }
+
+    DoublyLinkedListNode<T>* getTail() const
+    {
+        return tail;
+    }
 };
 
 #endif //DATA_STRUCTURES_ALGOS_DOUBLYLINKEDLIST_H
