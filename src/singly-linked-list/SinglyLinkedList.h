@@ -6,14 +6,15 @@
 #define DATA_STRUCTURES_ALGOS_SINGLYLINKEDLIST_H
 
 #include "SinglyLinkedListNode.h"
-template<typename T>
+template <typename T>
 class SinglyLinkedList
 {
-    SinglyLinkedListNode<T>* head;
-    SinglyLinkedListNode<T>* tail;
+    SinglyLinkedListNode<T> *head;
+    SinglyLinkedListNode<T> *tail;
+    uint32_t size;
 
 public:
-    SinglyLinkedList() : head(nullptr), tail(nullptr) {}
+    SinglyLinkedList() : head(nullptr), tail(nullptr), size(0) {}
 
     ~SinglyLinkedList()
     {
@@ -22,42 +23,44 @@ public:
 
     void clear()
     {
-        SinglyLinkedListNode<T>* current = head;
+        SinglyLinkedListNode<T> *current = head;
         while (current != nullptr)
         {
-            SinglyLinkedListNode<T>* nextNode = current->next;
+            SinglyLinkedListNode<T> *nextNode = current->next;
             delete current;
             current = nextNode;
         }
         head = nullptr;
+        size = 0;
     }
 
     void addToFront(T data)
     {
-        SinglyLinkedListNode<T>* newNode = new SinglyLinkedListNode(data);
+        SinglyLinkedListNode<T> *newNode = new SinglyLinkedListNode(data);
         newNode->next = head;
         head = newNode;
+        size++;
     }
 
-std::string toString()
-{
-    std::string answer;
-    SinglyLinkedListNode<T>* current = head;
-    while (current != nullptr)
+    std::string toString()
     {
-        if (current->next == nullptr)
+        std::string answer;
+        SinglyLinkedListNode<T> *current = head;
+        while (current != nullptr)
         {
-            answer += current->toString();
-            return answer;
+            if (current->next == nullptr)
+            {
+                answer += current->toString();
+                return answer;
+            }
+            else
+            {
+                answer += current->toString() + " -> ";
+                current = current->next;
+            }
         }
-        else
-        {
-            answer += current->toString() + " -> ";
-            current = current->next;
-        }
+        return answer;
     }
-    return answer;
-}
 
     void addToBack(T data)
     {
@@ -67,24 +70,29 @@ std::string toString()
         }
         else
         {
-            SinglyLinkedListNode<T>* current = head;
-            while(current->next != nullptr)
+            SinglyLinkedListNode<T> *current = head;
+            while (current->next != nullptr)
             {
                 current = current->next;
             }
             current->next = new SinglyLinkedListNode(data);
         }
+        size++;
     }
 
     T removeFromFront()
     {
-        if (head == nullptr) { return T(); }
+        if (head == nullptr)
+        {
+            return T();
+        }
 
-        SinglyLinkedListNode<T>* temp = head;
+        SinglyLinkedListNode<T> *temp = head;
         head = head->next;
         T data = temp->data;
         delete temp;
         return data;
+        size--;
     }
 
     T removeFromBack()
@@ -104,9 +112,9 @@ std::string toString()
 
         else
         {
-            SinglyLinkedListNode<T>* current = head;
+            SinglyLinkedListNode<T> *current = head;
 
-            while(current->next->next != nullptr)
+            while (current->next->next != nullptr)
             {
                 current = current->next;
             }
@@ -115,15 +123,23 @@ std::string toString()
             current->next = nullptr;
             return data;
         }
-
+        size--;
     }
 
-    SinglyLinkedListNode<T>* getHead() const
+    SinglyLinkedListNode<T> *getHead() const
     {
         return head;
     }
 
+    SinglyLinkedListNode<T> *getTail() const
+    {
+        return tail;
+    }
+
+    uint32_t getSize() const
+    {
+        return size;
+    }
 };
 
-
-#endif //DATA_STRUCTURES_ALGOS_SINGLYLINKEDLIST_H
+#endif // DATA_STRUCTURES_ALGOS_SINGLYLINKEDLIST_H
