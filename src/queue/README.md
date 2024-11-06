@@ -9,7 +9,7 @@ Unlike stacks which are Last In First Out (LIFO), queues are First In First Out 
 
 ```cpp
     // adds element to the back of the queue
-    void enqueue(T)
+    void enqueue(T);
 
     // removes and returns the element that was in the queue the longest
     T dequeue();
