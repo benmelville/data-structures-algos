@@ -19,4 +19,6 @@ TEST(QueueTest, EnqueueTest)
     queue.enqueue(78);
     queue.enqueue(90);
     queue.enqueue(56);
+
+    ASSERT_EQ(queue.size(), 5);
 }
