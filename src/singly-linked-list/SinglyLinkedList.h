@@ -107,9 +107,9 @@ public:
             data = head->data;
             delete head;
             head = nullptr;
+            size--;
             return data;
         }
-
         else
         {
             SinglyLinkedListNode<T> *current = head;
@@ -121,9 +121,9 @@ public:
             data = current->next->data;
             delete current->next;
             current->next = nullptr;
+            size--;
             return data;
         }
-        size--;
     }
 
     SinglyLinkedListNode<T> *getHead() const

@@ -13,6 +13,10 @@ int main()
     queue.enqueue(78);
     queue.enqueue(90);
     queue.enqueue(56);
+    queue.dequeue();
+    queue.dequeue();
+    queue.dequeue();
+    queue.dequeue();
     queue.printQueue();
 
     std::cout << queue.size() << std::endl;
